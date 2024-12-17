@@ -1,0 +1,13 @@
+1. hono setup
+2. npm i prisma // npx prisma init 
+3. setup database aiven or neon 
+4. create prisma proj and generate and api key for connection pooling(accelerate)
+
+//cli picks url from the .env file and index.ts the app picks from wrangler.toml the prisma url//
+
+5. database url in .env
+6. api key in wranger.toml 
+7. create schema
+8. npx prisma migrate dev --name init_schema (migrate)
+9. generate client (npx prisma generate --no-engine) Post,
+10. npm i @prisma/extension-accelerate
