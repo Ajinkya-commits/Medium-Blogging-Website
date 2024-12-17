@@ -36,11 +36,6 @@ userRouter.post('/signup', async (c) => {
         name:body.name,
       },
     });
-    const token = await sign({ id: user.id }, c.env.JWT_SECRET);
-    console.log("from signup",token)
-    return c.text(
-      token
-    );
     const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
     console.log(jwt);
   return c.text(jwt);
