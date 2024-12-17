@@ -11,14 +11,6 @@ const app = new Hono<{
 }>()
 
 app.use("/*",cors())
-app.get('/api', async (c) => {
-  console.log('Signup request received');
-  return new Response(JSON.stringify({ message: 'API is working!' }), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' },
-  });
-});
-
 app.route("/api/v1/user",userRouter);
 app.route("/api/v1/blog",blogRouter);
 
