@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Publish = () => {
   const [title, settitle] = useState("");
   const [content, setcontent] = useState("");
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   return (
