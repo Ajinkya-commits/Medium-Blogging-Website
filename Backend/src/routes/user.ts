@@ -21,6 +21,7 @@ userRouter.post('/signup', async (c) => {
 
   try {
     const body = await c.req.json();
+    console.log(body)
     const {success} = signupInput.safeParse(body);
     if(!success){
       c.status(411);
@@ -36,9 +37,10 @@ userRouter.post('/signup', async (c) => {
       },
     });
     const token = await sign({ id: user.id }, c.env.JWT_SECRET);
-    return c.json({
-      jwt: token,
-    });
+    console.log("from signup",token)
+    return c.text(
+      token
+    );
   } catch (error) {
     console.error('Error during signup:', error);
     c.status(411);
